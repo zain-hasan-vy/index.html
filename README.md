@@ -1,18 +1,34 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Noor Getaways offers halal-friendly travel experiences in Bengaluru, including family trips, Islamic heritage tours, and luxury getaways.">
+    <meta name="keywords" content="halal travel, Bengaluru, Islamic tours, family trips, halal food, mosque visits">
     <title>Noor Getaways - Halal Travel in Bengaluru</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background: #f8f9fa; }
         header { background: #004D40; color: white; padding: 20px; text-align: center; font-size: 1.5em; }
         .hero {
             text-align: center;
             padding: 80px 20px;
-            background: url('https://source.unsplash.com/1600x900/?travel,city') no-repeat center center/cover;
+            background: url('https://images.unsplash.com/photo-1622542796254-5b9c46ab0d2f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&h=900&q=80') no-repeat center center/cover;
             color: white;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+        }
+        .hero h1, .hero p, .hero .btn {
+            position: relative;
+            z-index: 1;
         }
         .hero h1 { font-size: 3em; margin: 0; }
         .hero p { font-size: 1.2em; }
@@ -27,6 +43,10 @@
             width: 30%;
             background: white;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .package:hover {
+            transform: scale(1.05);
         }
         .package h3 { color: #00796B; }
         .contact {
@@ -70,6 +90,28 @@
         }
         form button:hover {
             background: #004D40;
+        }
+        footer {
+            background: #004D40;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        footer a {
+            color: #FF9800;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .package {
+                width: 80%;
+                margin: 20px auto;
+            }
+            .hero h1 {
+                font-size: 2em;
+            }
         }
     </style>
 </head>
@@ -127,7 +169,7 @@
             <input type="text" id="name" name="name" required>
             
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
             
             <label for="package">Select Package:</label>
             <select id="package" name="package" required>
@@ -147,5 +189,9 @@
         <h2>Contact Us</h2>
         <p>📞 WhatsApp: +91 XXXXX XXXXX | 📩 Email: info@noorgetaways.com</p>
     </div>
+    
+    <footer>
+        <p>© 2023 Noor Getaways. All rights reserved. | <a href="#">Terms & Conditions</a></p>
+    </footer>
 </body>
 </html>
